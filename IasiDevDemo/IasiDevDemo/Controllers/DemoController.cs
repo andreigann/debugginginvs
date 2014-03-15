@@ -152,5 +152,19 @@ namespace IasiDevDemo.Controllers
 
             return "Success " + sum;
         }
+
+        public string DeepStack()
+        {
+            var bll = new Bll();
+            Customer customer = new Customer
+                {
+                    Id = 10,
+                    Name = "Mihai"
+                };
+            bll.UpdateCustomer(customer);
+
+
+            return "Success";
+        }
     }
 }
