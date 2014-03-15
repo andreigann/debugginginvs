@@ -24,7 +24,7 @@ namespace IasiDevDemo.Controllers
         {
             // Just My Code
             // Exceptions
-            // Break ono exception check
+            // Break on exception check
             try
             {
                 Logger.Info("Before throwing exception");
