@@ -20,7 +20,7 @@ namespace IasiDevDemo.Controllers
             return View();
         }
 
-        public ActionResult Exceptions()
+        public string Exceptions()
         {
             // Just My Code
             // Exceptions
@@ -38,7 +38,7 @@ namespace IasiDevDemo.Controllers
             }
 
 
-            return View();
+            return "Success";
         }
 
         public string SubexpressionBreakpoints()
