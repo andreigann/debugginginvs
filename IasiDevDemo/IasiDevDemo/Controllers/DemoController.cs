@@ -4,7 +4,6 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Web.Mvc;
 using IasiDevDemo.Infrastructure;
 using log4net;
@@ -21,7 +20,7 @@ namespace IasiDevDemo.Controllers
             return View();
         }
 
-        public string Exceptions()
+        public ActionResult Exceptions()
         {
             // Just My Code
             // Exceptions
@@ -39,7 +38,7 @@ namespace IasiDevDemo.Controllers
             }
 
 
-            return "Success";
+            return View();
         }
 
         public string SubexpressionBreakpoints()
@@ -179,27 +178,5 @@ namespace IasiDevDemo.Controllers
 
             return "Success";
         }
-
-        public async Task<string> GetDataFromExternalSourceAsync()
-        {
-            await Task.Delay(TimeSpan.FromSeconds(1));
-            await Task.Delay(TimeSpan.FromSeconds(3));
-            await Task.Delay(TimeSpan.FromSeconds(2));
-
-
-            return "Success";
-        }
-
-        public async Task<string> GetDataFromExternalSourceOneAwaitAsync()
-        {
-            var task1 = Task.Delay(TimeSpan.FromSeconds(1));
-            var task2 = Task.Delay(TimeSpan.FromSeconds(3));
-            var task3 = Task.Delay(TimeSpan.FromSeconds(2));
-
-            await Task.WhenAll(task1, task2, task3);
-
-            return "Success";
-        }
-
     }
 }
