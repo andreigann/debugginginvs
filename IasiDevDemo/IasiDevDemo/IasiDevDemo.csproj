@@ -257,7 +257,8 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <None Include="Properties\PublishProfiles\VirtualMachine.pubxml" />
+    <None Include="Properties\PublishProfiles\VirtualMachineSite1.pubxml" />
+    <None Include="Properties\PublishProfiles\VirtualMachineSite2.pubxml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />

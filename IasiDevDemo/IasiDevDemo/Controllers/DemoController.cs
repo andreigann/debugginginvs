@@ -112,12 +112,23 @@ namespace IasiDevDemo.Controllers
 
         public string FilterBreakpoints()
         {
-            for (int i = 0; i < 10; i++)
+            const int noOperations = 10;
+            //var tasks = new Task[noTasks];
+            var threads = new Thread[noOperations];
+
+            for (int i = 0; i < noOperations; i++)
             {
-                new Thread(DoWork).Start();
+                threads[i] = new Thread(DoWork);
+                threads[i].Start();
             }
 
             waitHandle.Set();
+
+            for (int i = 0; i < threads.Length; i++)
+            {
+                threads[i].Join();
+            }
+
             return "Success";
         }
 
@@ -128,6 +139,7 @@ namespace IasiDevDemo.Controllers
             var sb = new StringBuilder();
             sb.AppendFormat("Thread {0} starting.", GetCurrentThreadId());
             Trace.WriteLine(sb.ToString());
+            Thread.Sleep(0);
             waitHandle.WaitOne();
             sb.Length = 0;
             sb.AppendFormat("Thread {0} ending.", GetCurrentThreadId());
